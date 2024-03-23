@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Pokédex</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main id="container">
+      <header id="header">
+        <h1 id="name-Pokemon"></h1>
+        <div id="container-search">
+          <button id="button-search">
+            <img src="./public/211817_search_strong_icon.svg" alt="" />
+          </button>
+          <input id="search" type="text" placeholder="Nome ou Id" />
+        </div>
+        <div id="pokemonId"></div>
+      </header>
+      <section id="choose">
+        <button id="anterior">
+          <img src="./public/chevron_left.svg" alt="" />
+        </button>
+        <img id="image-Pokemon" src="" alt="" />
+        <img id="pokeLogo" src="./public/Pokeball.svg" alt="" />
+        <button id="proximo">
+          <img src="./public/chevron_right.svg" alt="" />
+        </button>
+      </section>
+      <!-- vai ser meu container -->
+      <section id="card">
+        <div id="types">
+          <div class="type1">
+            <p>grass</p>
+          </div>
+        </div>
+        <div id="about">
+          <h3 id="color-about">About</h3>
+          <div id="container-dados">
+            <div id="weight">
+              <img src="./public/weight.svg" alt="" />
+              <p>3,4kg</p>
+            </div>
+            <div id="height">
+              <img src="./public/straighten.svg" alt="" />
+              <p>3,4m</p>
+            </div>
+          </div>
+        </div>
+        <div id="stats"></div>
+      </section>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
