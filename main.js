@@ -9,8 +9,8 @@ const weightPokemon = document.querySelector("#weight p")
 const heightPokemon = document.querySelector("#height p")
 const containerTypes = document.querySelector("#types")
 const imagePokemon = document.querySelector("#image-Pokemon")
-const buttonPrevious = document.querySelector("#anterior")
-const buttonNext = document.querySelector("#proximo")
+const buttonAnterior = document.querySelector("#anterior")
+const buttonProximo = document.querySelector("#proximo")
 
 let pokemonId
 
@@ -20,8 +20,11 @@ const printInfoPokemon = async (nameId) => {
   const pokemon = await fetchPokemon(nameId)
 
   containerTypes.innerHTML = ""
+  pokemonId = pokemon.id
 
+  console.log(pokemonId)
   const firstType = pokemon.types[0].type.name
+
   body.style.backgroundColor = getComputedStyle(
     document.documentElement
   ).getPropertyValue(`--${firstType}-color`)
@@ -29,11 +32,10 @@ const printInfoPokemon = async (nameId) => {
     document.documentElement
   ).getPropertyValue(`--${firstType}-color`)
 
-  pokemonId = pokemon.id
   imagePokemon.src = pokemon.image
 
   namePokemon.textContent = pokemon.name
-  idPokemonDisplay.textContent = pokemon.id
+  idPokemonDisplay.textContent = pokemon.idDisplay
   weightPokemon.textContent = pokemon.weight
   heightPokemon.textContent = pokemon.height
 
@@ -47,6 +49,21 @@ const printInfoPokemon = async (nameId) => {
     containerTypes.appendChild(typeElement)
   })
 }
+
+const proximo = () => {
+  printInfoPokemon(pokemonId + 1)
+  inputSearch.innerText = ""
+}
+
+buttonProximo.addEventListener("click", proximo)
+
+const anterior = () => {
+  if (pokemonId > 1) {
+    printInfoPokemon(pokemonId - 1)
+  }
+}
+
+buttonAnterior.addEventListener("click", anterior)
 
 const pesquisarPokemon = () => {
   const pokemon = inputSearch.value

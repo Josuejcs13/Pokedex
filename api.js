@@ -5,10 +5,12 @@ export const fetchPokemon = async (nameId) => {
 
     const returnInfos = {
       name: data.name.charAt(0).toUpperCase() + data.name.slice(1),
-      id: `#0${data.id}`,
+      id: data.id,
+      idDisplay: `#0${data.id}`,
       image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${nameId}.png`,
       imageApi: data.sprites.front_default,
       types: data.types,
+      // type: data.types[0].type.name,
       weight: `${data.weight}g`,
       height: `${data.height}m`,
 
@@ -24,7 +26,5 @@ export const fetchPokemon = async (nameId) => {
     }
 
     return returnInfos
-  } catch (error) {
-    throw new Error("deu ruim na API")
-  }
+  } catch (error) {}
 }

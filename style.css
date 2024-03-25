@@ -90,6 +90,7 @@ body {
 
 #button-search img {
   height: 1rem;
+  cursor: pointer;
 }
 
 #idPokemon {
@@ -110,6 +111,7 @@ body {
 #choose button img {
   height: 2rem;
   margin-bottom: 7px;
+  cursor: pointer;
 }
 #image-Pokemon {
   height: 12rem;
@@ -125,7 +127,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background-color: #f8fafc;
-  padding: 2rem 8rem;
+  padding: 2rem 9rem;
   border-radius: 0.5rem;
   box-shadow:
     rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
