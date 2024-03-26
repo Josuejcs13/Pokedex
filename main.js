@@ -26,7 +26,6 @@ const printInfoPokemon = async (nameId) => {
   containerTypes.innerHTML = ""
   pokemonId = pokemon.id
 
-  console.log(pokemonId)
   const firstType = pokemon.types[0].type.name
 
   body.style.backgroundColor = getComputedStyle(
@@ -42,7 +41,7 @@ const printInfoPokemon = async (nameId) => {
     document.documentElement
   ).getPropertyValue(`--${firstType}-color`)
 
-  imagePokemon.src = pokemon.image
+  imagePokemon.src = pokemon.image()
   namePokemon.textContent = pokemon.name
   idPokemonDisplay.textContent = pokemon.idDisplay
   weightPokemon.textContent = pokemon.weight
